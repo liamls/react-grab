@@ -33,6 +33,9 @@ const parseOptionsFromJson = (rawValue: unknown): Partial<Options> | null => {
   if (typeof rawValue.telemetry === "boolean") {
     parsedOptions.telemetry = rawValue.telemetry;
   }
+  if (typeof rawValue.logBanner === "boolean") {
+    parsedOptions.logBanner = rawValue.logBanner;
+  }
 
   if (Object.keys(parsedOptions).length === 0) return null;
   return parsedOptions;

@@ -313,12 +313,20 @@ export interface Options {
    * @default true
    */
   telemetry?: boolean;
+  /**
+   * Whether to print the React Grab startup banner to the console on init.
+   * Set to false to skip it, e.g. when its styled output is forwarded into a
+   * dev server terminal that can't render CSS/background-image formatting.
+   * @default true
+   */
+  logBanner?: boolean;
 }
 
 export interface SettableOptions extends Options {
   enabled?: never;
   telemetry?: never;
   container?: never;
+  logBanner?: never;
 }
 
 export interface SourceInfo {
