@@ -253,7 +253,7 @@ export const init = (rawOptions?: Options): ReactGrabAPI => {
   // The demo build is a display-only showcase, not an install: no console
   // banner, no version-check fetch (whose "outdated" nag would hit every
   // visitor whenever the bundled version drifts from the published one).
-  if (!IS_DEMO) {
+  if (!IS_DEMO && initialOptions.logBanner !== false) {
     logIntro(initialOptions.telemetry !== false);
   }
 
@@ -262,6 +262,7 @@ export const init = (rawOptions?: Options): ReactGrabAPI => {
     enabled: _enabled,
     telemetry: _telemetry,
     container: _container,
+    logBanner: _logBanner,
     ...settableOptions
   } = initialOptions;
 
